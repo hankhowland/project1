@@ -18,7 +18,8 @@ export default class App extends React.Component {
       displayTest: false,
       displayTutorial: false,
       displaySendTut: false,
-      tutorialEmoji: 'angry'
+      tutorialEmoji: 'angry',
+      recieveType: 0
     };
   };   
 
@@ -29,7 +30,7 @@ export default class App extends React.Component {
           <Instructions display={this.state.displayInstructions} runTutorial={this.runTutorial}  runTest={this.runTest} runSendTut={this.runSendTut} />
           <Tutorial display={this.state.displayTutorial} emoji={this.state.tutorialEmoji} />
           <Test ref={this.testElement} display={this.state.displayTest} testType={this.state.recieveType} exit={this.exitToIntroscreen}/>
-          <SendTut display={this.state.displaySendTut} exit={this.exitToIntroscreen} />
+          <SendTut display={this.state.displaySendTut} exit={this.exitToIntroscreen} type={this.state.recieveType} />
       </View>
     );
   };
@@ -73,10 +74,11 @@ export default class App extends React.Component {
     this.testElement.current.sendVibration(randomEmoji())
   }
 
-  runSendTut = () => {
+  runSendTut = (type) => {
     this.setState({
       displayInstructions: false,
-      displaySendTut: true
+      displaySendTut: true,
+      recieveType: type
     });
   }
 

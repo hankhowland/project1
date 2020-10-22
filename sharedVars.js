@@ -63,10 +63,10 @@ export const gestureDict = {
     "laugh1": "up quickly",
     "like1": "right quickly",
     "love1": "left quickly",
-    "angry2": "not set",
-    "sad2": "not set",
-    "happy2": "not set",
-    "laugh2": "not set",
-    "like2": "not set",
-    "love2": "not set"
+    "angry2": "up quickly",
+    "sad2": "right quickly",
+    "happy2": "left quickly",
+    "laugh2": "down quickly",
+    "like2": "left slowly",
+    "love2": "right slowly"
 }
