@@ -16,7 +16,7 @@ class Instructions extends React.Component {
                 <View>
                     <Text style={{ marginTop: 40, paddingLeft: 40, fontWeight: 'bold' }}>
                         RECIEVING:
-          </Text>
+                    </Text>
                     <TouchableOpacity
                         style={styles.btn}
                         onPress={() => this.props.runTutorial(1)}>
@@ -42,10 +42,10 @@ class Instructions extends React.Component {
 
                     <Text style={{ marginTop: 40, paddingLeft: 40, fontWeight: 'bold' }}>
                         SENDING:
-          </Text>
+                    </Text>
                     <TouchableOpacity
                         style={styles.btn}
-                        onPress={() => this.props.runTutorial(1)}>
+                        onPress={() => this.props.runSendTut()}>
                         <Text style={styles.btnText}>Run Tutorial 1</Text>
                     </TouchableOpacity>
                     <TouchableOpacity

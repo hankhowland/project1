@@ -1,4 +1,4 @@
-export const emojinames = ['happy','angry','sad','love','laugh','like'];
+export const emojinames = ['angry','happy','sad','love','laugh','like'];
 
 //returns a random element of emoji names
 export const randomEmoji = () => {
@@ -53,4 +53,20 @@ export const imageDict = {
     "laugh": laughimg,
     "like": likeimg,
     "love": loveimg
+}
+
+//emoji gestures
+export const gestureDict = {
+    "angry1": "down quickly",
+    "sad1": "down slowly",
+    "happy1": "up slowly",
+    "laugh1": "up quickly",
+    "like1": "right quickly",
+    "love1": "left quickly",
+    "angry2": "not set",
+    "sad2": "not set",
+    "happy2": "not set",
+    "laugh2": "not set",
+    "like2": "not set",
+    "love2": "not set"
 }

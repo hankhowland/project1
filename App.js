@@ -5,6 +5,7 @@ import {TouchableOpacity, StyleSheet, Text, View, Button, Vibration } from 'reac
 import Instructions from './components/introscreen.js';
 import Tutorial from './components/tutorial.js';
 import Test from './components/test.js';
+import SendTut from './components/sendingTutorial.js';
 import {patternDict, emojinames, randomEmoji} from './sharedVars.js';
 
 export default class App extends React.Component {
@@ -16,6 +17,7 @@ export default class App extends React.Component {
       displayInstructions: true,
       displayTest: false,
       displayTutorial: false,
+      displaySendTut: false,
       tutorialEmoji: 'angry'
     };
   };   
@@ -24,9 +26,10 @@ export default class App extends React.Component {
   render() {
     return (
       <View>
-          <Instructions display={this.state.displayInstructions} runTutorial={this.runTutorial}  runTest={this.runTest}/>
+          <Instructions display={this.state.displayInstructions} runTutorial={this.runTutorial}  runTest={this.runTest} runSendTut={this.runSendTut} />
           <Tutorial display={this.state.displayTutorial} emoji={this.state.tutorialEmoji} />
           <Test ref={this.testElement} display={this.state.displayTest} testType={this.state.recieveType} exit={this.exitToIntroscreen}/>
+          <SendTut display={this.state.displaySendTut} exit={this.exitToIntroscreen} />
       </View>
     );
   };
@@ -70,11 +73,19 @@ export default class App extends React.Component {
     this.testElement.current.sendVibration(randomEmoji())
   }
 
+  runSendTut = () => {
+    this.setState({
+      displayInstructions: false,
+      displaySendTut: true
+    });
+  }
+
   //passed to test component and called when the test is completed to revert back to introscreen component
   exitToIntroscreen = async () => {
     this.setState({
       displayInstructions: true,
-      displayTest: false
+      displayTest: false,
+      displaySendTut: false
     });
   }
 }
