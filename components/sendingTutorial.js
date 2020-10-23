@@ -9,7 +9,8 @@ class SendTut extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: "swipe down quickly in the white box",
+      text:
+        "swipe " + gestureDict["angry" + this.props.type] + " in the white box",
       swipeDirection: "",
       correctEmoji: "angry",
       emojiIndex: 0,
@@ -74,7 +75,11 @@ class SendTut extends React.Component {
         this.setState({
           emojiIndex: 0,
           correctEmoji: "angry",
-          text: "swipe up quickly in the white box",
+          text:
+            "swipe " +
+            gestureDict["angry" + this.props.type] +
+            " in the white box",
+          swipeDirection: "",
         });
         this.props.exit();
       } else {
