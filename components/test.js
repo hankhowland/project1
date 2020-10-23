@@ -57,7 +57,7 @@ class Test extends React.Component {
   //prepares state for next trial, and sends vibration of emoji argument
   //unless max number of trials has been reached, then displays the results and exits to introscreen
   sendVibration = (emoji) => {
-    if (this.state.trials < 5) {
+    if (this.state.trials < 30) {
       this.setState({
         correctEmoji: emoji,
         numTries: 0,
@@ -82,7 +82,6 @@ class Test extends React.Component {
   //and initiates next trial by calling sendVibration
   //if it isn't, increments numTries and waits for next attempt
   checkCorrect = (emoji) => {
-    //console.log('correct: ' + this.state.correctEmoji);
     if (emoji == this.state.correctEmoji) {
       this.state.data.push([this.state.correctEmoji, this.state.numTries + 1]);
       this.setState({
@@ -95,6 +94,9 @@ class Test extends React.Component {
         text: "incorrect. try again...",
         attempts: "attempts: " + (this.state.numTries + 1),
       });
+      Vibration.vibrate(
+        eval(patternDict[this.state.correctEmoji + this.props.testType])
+      );
     }
   };
 }

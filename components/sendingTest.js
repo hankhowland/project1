@@ -90,8 +90,7 @@ class SendTest extends React.Component {
       trial,
     } = this.state;
     if (correctEmoji == swipeDirection) {
-      if (trial < 4) {
-        //console.log([correctEmoji, numAttempts+1]);
+      if (trial < 30) {
         this.setState({
           text: "",
           attempts: "",
