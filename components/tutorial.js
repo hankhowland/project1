@@ -1,33 +1,28 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { TouchableOpacity, Text, StyleSheet, View, Image } from 'react-native';
-import {imageDict} from '../sharedVars.js';
+import { StatusBar } from "expo-status-bar";
+import React from "react";
+import { TouchableOpacity, Text, StyleSheet, View, Image } from "react-native";
+import { imageDict } from "../sharedVars.js";
 
 class Tutorial extends React.Component {
-    render() {
-
-        if (this.props.display) {
-            return(
-                <View style={styles.cont}>
-                    <Image source={eval(imageDict[this.props.emoji])} />
-                </View>
-                );
-        }
-        else {return(<View></View>)}
-    };
-};
+  render() {
+    if (this.props.display) {
+      return (
+        <View style={styles.cont}>
+          <Image source={eval(imageDict[this.props.emoji])} />
+        </View>
+      );
+    } else {
+      return <View></View>;
+    }
+  }
+}
 
 const styles = StyleSheet.create({
-    cont: {
-        alignItems: 'center',
-        padding:20,
-	marginTop: 30
-    }
+  cont: {
+    alignItems: "center",
+    padding: 200,
+    marginTop: 30,
+  },
 });
 
-
 export default Tutorial;
-
-
-
-
