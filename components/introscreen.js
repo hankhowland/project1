@@ -1,13 +1,14 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
+import { cyan } from "color-name";
+import { StatusBar } from "expo-status-bar";
+import React from "react";
 import {
-    TouchableOpacity,
-    StyleSheet,
-    Text,
-    View,
-    Button,
-    Vibration,
-} from 'react-native';
+  TouchableOpacity,
+  StyleSheet,
+  Text,
+  View,
+  Button,
+  Vibration,
+} from "react-native";
 
 class Instructions extends React.Component {
     render() {
@@ -38,7 +39,7 @@ class Instructions extends React.Component {
                         <Text style={styles.btnText}>Run Test (Pattern #2)</Text>
                     </TouchableOpacity>
 
-                    <View style={{ borderBottomWidth: 3 }}></View>
+          <View style={{ marginTop: 40, borderBottomWidth: 3 }}></View>
 
                     <Text style={{ marginTop: 40, paddingLeft: 10, fontWeight: 'bold', fontSize: 25 }}>
                         SENDING:
@@ -69,6 +70,7 @@ class Instructions extends React.Component {
             return <View></View>;
         }
     }
+  }
 }
 
 const styles = StyleSheet.create({
