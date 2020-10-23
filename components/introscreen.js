@@ -50,7 +50,7 @@ class Instructions extends React.Component {
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={styles.btn}
-                        onPress={() => this.props.runTest(1)}>
+                        onPress={() => this.props.runSendTest(1)}>
                         <Text style={styles.btnText}>Run Test 1</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
@@ -60,7 +60,7 @@ class Instructions extends React.Component {
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={styles.btn}
-                        onPress={() => this.props.runTest(2)}>
+                        onPress={() => this.props.runSendTest(2)}>
                         <Text style={styles.btnText}>Run Test 2</Text>
                     </TouchableOpacity>
                 </View>

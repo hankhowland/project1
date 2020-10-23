@@ -70,3 +70,4 @@ export const gestureDict = {
     "like2": "left slowly",
     "love2": "right slowly"
 }
+

@@ -6,6 +6,7 @@ import Instructions from './components/introscreen.js';
 import Tutorial from './components/tutorial.js';
 import Test from './components/test.js';
 import SendTut from './components/sendingTutorial.js';
+import SendTest from './components/sendingTest.js';
 import {patternDict, emojinames, randomEmoji} from './sharedVars.js';
 
 export default class App extends React.Component {
@@ -13,6 +14,7 @@ export default class App extends React.Component {
   constructor(props) {
     super(props);
     this.testElement = React.createRef();
+    this.sendTestElement = React.createRef();
     this.state = {
       displayInstructions: true,
       displayTest: false,
@@ -27,10 +29,11 @@ export default class App extends React.Component {
   render() {
     return (
       <View>
-          <Instructions display={this.state.displayInstructions} runTutorial={this.runTutorial}  runTest={this.runTest} runSendTut={this.runSendTut} />
+          <Instructions display={this.state.displayInstructions} runTutorial={this.runTutorial}  runTest={this.runTest} runSendTut={this.runSendTut} runSendTest={this.runSendTest}/>
           <Tutorial display={this.state.displayTutorial} emoji={this.state.tutorialEmoji} />
           <Test ref={this.testElement} display={this.state.displayTest} testType={this.state.recieveType} exit={this.exitToIntroscreen}/>
           <SendTut display={this.state.displaySendTut} exit={this.exitToIntroscreen} type={this.state.recieveType} />
+          <SendTest ref={this.sendTestElement} display={this.state.displaySendTest} exit={this.exitToIntroscreen} type={this.state.recieveType} />
       </View>
     );
   };
@@ -82,12 +85,22 @@ export default class App extends React.Component {
     });
   }
 
+  runSendTest = (type) => {
+    this.setState({
+      displayInstructions: false,
+      displaySendTest: true,
+      recieveType: type
+    });
+    this.sendTestElement.current.setTrial(randomEmoji())
+  }
+
   //passed to test component and called when the test is completed to revert back to introscreen component
   exitToIntroscreen = async () => {
     this.setState({
       displayInstructions: true,
       displayTest: false,
-      displaySendTut: false
+      displaySendTut: false,
+      displaySendTest: false
     });
   }
 }
