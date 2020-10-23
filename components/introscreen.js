@@ -18,24 +18,24 @@ class Instructions extends React.Component {
                         RECEIVING:
                     </Text>
                     <TouchableOpacity
-                        style={styles.btn}
+                        style={styles.btn1}
                         onPress={() => this.props.runTutorial(1)}>
-                        <Text style={styles.btnText}>Run Tutorial 1</Text>
+                        <Text style={styles.btnText}>Run Tutorial (Pattern #1)</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        style={styles.btn}
+                        style={styles.btn1}
                         onPress={() => this.props.runTest(1)}>
-                        <Text style={styles.btnText}>Run Test 1</Text>
+                        <Text style={styles.btnText}>Run Test (Pattern #1)</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        style={styles.btn}
+                        style={styles.btn2}
                         onPress={() => this.props.runTutorial(2)}>
-                        <Text style={styles.btnText}>Run Tutorial 2</Text>
+                        <Text style={styles.btnText}>Run Tutorial (Pattern #2)</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        style={styles.btn}
+                        style={styles.btn2}
                         onPress={() => this.props.runTest(2)}>
-                        <Text style={styles.btnText}>Run Test 2</Text>
+                        <Text style={styles.btnText}>Run Test (Pattern #2)</Text>
                     </TouchableOpacity>
 
                     <View style={{ borderBottomWidth: 3 }}></View>
@@ -44,24 +44,24 @@ class Instructions extends React.Component {
                         SENDING:
                     </Text>
                     <TouchableOpacity
-                        style={styles.btn}
+                        style={styles.btn1}
                         onPress={() => this.props.runSendTut('1')}>
-                        <Text style={styles.btnText}>Run Tutorial 1</Text>
+                        <Text style={styles.btnText}>Run Tutorial (Pattern #1)</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        style={styles.btn}
+                        style={styles.btn1}
                         onPress={() => this.props.runSendTest(1)}>
-                        <Text style={styles.btnText}>Run Test 1</Text>
+                        <Text style={styles.btnText}>Run Test (Pattern #1)</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        style={styles.btn}
+                        style={styles.btn2}
                         onPress={() => this.props.runSendTut('2')}>
-                        <Text style={styles.btnText}>Run Tutorial 2</Text>
+                        <Text style={styles.btnText}>Run Tutorial (Pattern #2)</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
-                        style={styles.btn}
+                        style={styles.btn2}
                         onPress={() => this.props.runSendTest(2)}>
-                        <Text style={styles.btnText}>Run Test 2</Text>
+                        <Text style={styles.btnText}>Run Test (Pattern #2)</Text>
                     </TouchableOpacity>
                 </View>
             );
@@ -72,17 +72,25 @@ class Instructions extends React.Component {
 }
 
 const styles = StyleSheet.create({
-    btn: {
+    btn1: {
         alignItems: 'center',
         margin: 10,
         padding: 5,
         borderWidth: 1,
-        backgroundColor: '#d3d3d3',
+        backgroundColor: '#b3d9fc',
+        borderRadius: 5,
+    },
+    btn2: {
+        alignItems: 'center',
+        margin: 10,
+        padding: 5,
+        borderWidth: 1,
+        backgroundColor: '#c8fab1',
         borderRadius: 5,
     },
     btnText: {
         fontSize: 25,
-        fontWeight: 'bold',
+        //fontWeight: 'bold',
     },
     bold: {
         fontWeight: 'bold',
