@@ -18,7 +18,14 @@ class SendTest extends React.Component {
       correctEmoji: "angry",
       trial: 0,
       numAttempts: 0,
-      data: [],
+      results: {
+        angry: {},
+        sad: {},
+        happy: {},
+        laugh: {},
+        like: {},
+        love: {},
+      },
     };
   }
 
@@ -82,34 +89,31 @@ class SendTest extends React.Component {
   };
 
   sendMessage = () => {
-    const {
-      correctEmoji,
-      swipeDirection,
-      data,
-      numAttempts,
-      trial,
-    } = this.state;
+    const { correctEmoji, swipeDirection, numAttempts, trial } = this.state;
     if (correctEmoji == swipeDirection) {
-      if (trial < 30) {
+      if (trial < 10) {
+        this.state.results[swipeDirection][this.state.numAttempts + 1] =
+          (this.state.results[swipeDirection][this.state.numAttempts + 1] ||
+            0) + 1;
         this.setState({
           text: "",
           attempts: "",
-          data: data.concat([
-            { emoji: correctEmoji, attempts: numAttempts + 1 },
-          ]),
         });
         this.setTrial(randomEmoji());
       } else {
+        console.log("SENDING TEST " + this.props.type + " RESULTS");
+        console.log(this.state.results);
+        this.state.results = {
+          angry: {},
+          sad: {},
+          happy: {},
+          laugh: {},
+          like: {},
+          love: {},
+        };
         this.setState({
           trial: 0,
           text: "",
-        });
-        console.log("SENDING TEST " + this.props.type + " RESULTS:");
-        console.log(
-          data.concat([{ emoji: correctEmoji, attempts: numAttempts + 1 }])
-        );
-        this.setState({
-          data: [],
         });
         this.props.exit();
       }

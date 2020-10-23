@@ -5,6 +5,17 @@ export const randomEmoji = () => {
   return emojinames[Math.floor(Math.random() * Math.floor(6))];
 };
 
+function clearResults() {
+  this.results = {
+    angry: {},
+    sad: {},
+    happy: {},
+    laugh: {},
+    like: {},
+    love: {},
+  };
+}
+
 //numbers are the time in ms between the vibrations, in order
 //on ios vibrations are fixed length, always 400ms
 //function kinda starts getting wierd when the separation times are low (<500)
@@ -24,6 +35,15 @@ const angry2 = [1200, 1200, 1200];
 const love2 = [600, 600];
 const laugh2 = [1200, 600, 600, 1200, 600, 600];
 const like2 = [600];
+
+export const results = {
+  angry: {},
+  sad: {},
+  happy: {},
+  laugh: {},
+  like: {},
+  love: {},
+};
 
 export const patternDict = {
   angry1: angry1,

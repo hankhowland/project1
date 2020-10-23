@@ -13,6 +13,8 @@ import {
   imageDict,
   patternDict,
   randomEmoji,
+  results,
+  clearResults,
 } from "../sharedVars.js";
 
 class Test extends React.Component {
@@ -24,7 +26,14 @@ class Test extends React.Component {
       text: "",
       attempts: "",
       trials: 0,
-      data: [],
+      results: {
+        angry: {},
+        sad: {},
+        happy: {},
+        laugh: {},
+        like: {},
+        love: {},
+      },
     };
   }
 
@@ -57,20 +66,26 @@ class Test extends React.Component {
   //prepares state for next trial, and sends vibration of emoji argument
   //unless max number of trials has been reached, then displays the results and exits to introscreen
   sendVibration = (emoji) => {
-    if (this.state.trials < 30) {
+    if (this.state.trials < 10) {
       this.setState({
         correctEmoji: emoji,
         numTries: 0,
         text: "trial " + (this.state.trials + 1) + ": sending vibration...",
         trials: this.state.trials + 1,
       });
-      //console.log(eval(patternDict[emoji+this.props.testType]));
       Vibration.vibrate(eval(patternDict[emoji + this.props.testType]));
     } else {
-      console.log("RESULTS OF TEST " + this.props.testType);
-      console.log(this.state.data);
+      console.log("RECEIVING TEST " + this.props.testType + " RESULTS");
+      console.log(this.state.results);
+      this.state.results = {
+        angry: {},
+        sad: {},
+        happy: {},
+        laugh: {},
+        like: {},
+        love: {},
+      };
       this.setState({
-        data: [],
         trials: 0,
       });
       this.props.exit();
@@ -83,7 +98,8 @@ class Test extends React.Component {
   //if it isn't, increments numTries and waits for next attempt
   checkCorrect = (emoji) => {
     if (emoji == this.state.correctEmoji) {
-      this.state.data.push([this.state.correctEmoji, this.state.numTries + 1]);
+      this.state.results[emoji][this.state.numTries + 1] =
+        (this.state.results[emoji][this.state.numTries + 1] || 0) + 1;
       this.setState({
         attempts: "",
       });
