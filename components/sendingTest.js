@@ -160,7 +160,7 @@ class SendTest extends React.Component {
 const styles = StyleSheet.create({
     gestureReciever: {
         borderWidth: 1,
-        marginTop:20,
+        marginTop: 20,
         height:400,
         width:350
 
