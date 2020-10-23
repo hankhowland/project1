@@ -13,7 +13,7 @@ class Test extends React.Component {
         trials: 0,
         data: []
       };
-    };  
+    };
 
     render() {
         if (this.props.display) {
@@ -56,8 +56,8 @@ class Test extends React.Component {
       }
     }
 
-    //called on press of one of the emojis, checks if it is correct 
-    //if it is correct, records the trial in state.data, 
+    //called on press of one of the emojis, checks if it is correct
+    //if it is correct, records the trial in state.data,
     //and initiates next trial by calling sendVibration
     //if it isn't, increments numTries and waits for next attempt
     checkCorrect = (emoji) => {
@@ -69,25 +69,25 @@ class Test extends React.Component {
       else {
         this.setState({
           numTries: this.state.numTries + 1,
-          text: 'incorrect(' + (this.state.numTries+1) + ' attempts), try again'
+          text: 'incorrect (' + (this.state.numTries+1) + ' attempts), try again'
         });
       }
     }
 
-    
+
 };
 
-  
+
 
 
 const styles = StyleSheet.create({
-    div: { 
+    div: {
 	    marginTop: 10
 	 },
     cont: {
         alignItems: 'center',
-        padding:20,
-	    marginTop : 30
+        padding:0,
+	    marginTop:50
     },
     img: {
       height:50,
@@ -95,14 +95,10 @@ const styles = StyleSheet.create({
     },
     text: {
       fontWeight: 'bold',
-      padding:20
+      padding:20,
+      fontSize: 20
     }
 });
 
 
 export default Test;
-
-
-
-
-

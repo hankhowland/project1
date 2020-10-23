@@ -21,7 +21,7 @@ class SendTest extends React.Component {
           data: []
         };
       }
-    
+
     render() {
         const {trial, correctEmoji} = this.state;
         if (this.props.display) {
@@ -33,13 +33,13 @@ class SendTest extends React.Component {
                     </PanGestureHandler>
                     <Text style={{marginTop:10}}>Trial {trial}: send the <Image style={{width:20, height:20}} source={eval(imageDict[correctEmoji])} /> emoji.</Text>
                     <TouchableOpacity style={{borderRadius: 5, backgroundColor: 'blue', marginTop:30, padding:10}} onPress={() => this.sendMessage()}>
-                        <Text style={{fontSize:18, color:'white'}}>Send Gesture</Text>
+                        <Text style={{fontSize:25, color:'white'}}>Send Gesture</Text>
                     </TouchableOpacity>
-                    <Text style={{marginTop:5, fontSize:10}}>Gesture options: up, down, right, left (quickly/slowly for each direction)</Text>
+                    <Text style={{marginTop:5, fontSize:20}}>Gesture options: up, down, right, left (quickly/slowly for each direction)</Text>
                 </View>
             );}
         else {return <View><Text></Text></View>}
-    }   
+    }
 
     setTrial = (emoji) => {
         const { trial} = this.state;
@@ -174,7 +174,3 @@ const styles = StyleSheet.create({
 
 
 export default SendTest;
-
-
-
-

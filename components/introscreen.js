@@ -14,8 +14,8 @@ class Instructions extends React.Component {
         if (this.props.display) {
             return (
                 <View>
-                    <Text style={{ marginTop: 40, paddingLeft: 40, fontWeight: 'bold' }}>
-                        RECIEVING:
+                    <Text style={{ marginTop: 75, paddingLeft: 10, fontWeight: 'bold', fontSize: 25 }}>
+                        RECEIVING:
                     </Text>
                     <TouchableOpacity
                         style={styles.btn}
@@ -40,7 +40,7 @@ class Instructions extends React.Component {
 
                     <View style={{ borderBottomWidth: 3 }}></View>
 
-                    <Text style={{ marginTop: 40, paddingLeft: 40, fontWeight: 'bold' }}>
+                    <Text style={{ marginTop: 40, paddingLeft: 10, fontWeight: 'bold', fontSize: 25 }}>
                         SENDING:
                     </Text>
                     <TouchableOpacity
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
         borderRadius: 5,
     },
     btnText: {
-        fontSize: 20,
+        fontSize: 25,
         fontWeight: 'bold',
     },
     bold: {

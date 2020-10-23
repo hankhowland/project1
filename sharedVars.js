@@ -40,11 +40,11 @@ export const patternDict = {
 }
 
 //emoji images
-const angryimg = require('./images/angry.jpeg');
-const sadimg = require('./images/sad.jpeg');
-const happyimg = require('./images/happy.jpeg');
+const angryimg = require('./images/angry.png');
+const sadimg = require('./images/sad.png');
+const happyimg = require('./images/yay.png');
 const laughimg = require('./images/laugh.png');
-const likeimg = require('./images/like.jpeg');
+const likeimg = require('./images/like.png');
 const loveimg = require('./images/love.png');
 export const imageDict = {
     "angry": angryimg,
@@ -70,4 +70,3 @@ export const gestureDict = {
     "like2": "left slowly",
     "love2": "right slowly"
 }
-

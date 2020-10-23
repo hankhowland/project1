@@ -15,7 +15,7 @@ class SendTut extends React.Component {
           emojiIndex: 0
         };
       }
-    
+
     render() {
         if (this.props.display) {
             return (
@@ -26,12 +26,12 @@ class SendTut extends React.Component {
                     </PanGestureHandler>
                     {(this.state.swipeDirection.length > 0) && <Image style={{marginTop:10, width:50, height:50}} source={eval(imageDict[this.state.swipeDirection])} />}
                     <TouchableOpacity style={{borderRadius: 5, backgroundColor: 'blue', marginTop:10, padding:10}} onPress={() => this.sendMessage()}>
-                        <Text style={{fontSize:18, color:'white'}}>Send Emoji</Text>
+                        <Text style={{fontSize:25, color:'white'}}>Send Emoji</Text>
                     </TouchableOpacity>
                 </View>
             );}
         else {return <View><Text></Text></View>}
-    }   
+    }
 
     sendMessage = () => {
         const { correctEmoji, swipeDirection, emojiIndex} = this.state;
@@ -141,21 +141,17 @@ class SendTut extends React.Component {
 const styles = StyleSheet.create({
     gestureReciever: {
         borderWidth: 1,
-        marginTop:20,
+        marginTop:100,
         height:400,
         width:350
 
     },
     cont: {
         alignItems: 'center',
-        marginTop: 20
+        marginTop: 75
     }
 });
 
 
 
 export default SendTut;
-
-
-
-
