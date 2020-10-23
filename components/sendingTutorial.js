@@ -147,7 +147,8 @@ const styles = StyleSheet.create({
 
     },
     cont: {
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: 20
     }
 });
 
