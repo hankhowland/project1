@@ -41,7 +41,7 @@ class Test extends React.Component {
     if (this.props.display) {
       return (
         <View style={styles.cont}>
-          <Text style={{ marginTop: 20, fontSize: 24, fontWeight: "bold" }}>
+          <Text style={{ marginTop: 50, fontSize: 30, fontWeight: "bold" }}>
             tap the emoji you received
           </Text>
           {emojinames.map((name) => (
@@ -52,8 +52,8 @@ class Test extends React.Component {
               <Image style={styles.img} source={eval(imageDict[name])} />
             </TouchableOpacity>
           ))}
-          <Text style={{ marginTop: 20, fontSize: 18 }}>{this.state.text}</Text>
-          <Text style={{ marginTop: 10, fontSize: 18 }}>
+          <Text style={{ marginTop: 20, fontSize: 24 }}>{this.state.text}</Text>
+          <Text style={{ marginTop: 10, fontSize: 24 }}>
             {this.state.attempts}
           </Text>
         </View>
@@ -127,12 +127,12 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   img: {
-    height: 50,
-    width: 50,
+    height: 65,
+    width: 65,
   },
   text: {
     fontWeight: "bold",
-    fontSize: 18,
+    fontSize: 24,
     padding: 10,
   },
 });

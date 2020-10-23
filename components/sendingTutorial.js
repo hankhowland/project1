@@ -21,10 +21,10 @@ class SendTut extends React.Component {
     if (this.props.display) {
       return (
         <View style={styles.cont}>
-          <Text style={{ marginTop: 20, fontSize: 24, fontWeight: "bold" }}>
+          <Text style={{ marginTop: 50, fontSize: 30, fontWeight: "bold" }}>
             {"send the "}
             <Image
-              style={{ width: 20, height: 20 }}
+              style={{ width: 30, height: 30 }}
               source={eval(imageDict[this.state.correctEmoji])}
             />
             {" emoji"}
