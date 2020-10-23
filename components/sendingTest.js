@@ -13,6 +13,7 @@ class SendTest extends React.Component {
     super(props);
     this.state = {
       text: "",
+      attempts: "",
       swipeDirection: "",
       correctEmoji: "angry",
       trial: 0,
@@ -26,7 +27,7 @@ class SendTest extends React.Component {
     if (this.props.display) {
       return (
         <View style={styles.cont}>
-          <Text style={{ marginTop: 20, fontSize: 24, fontWeight: "bold" }}>
+          <Text style={{ marginTop: 0, fontSize: 24, fontWeight: "bold" }}>
             trial {trial}: send the{" "}
             <Image
               style={{ width: 20, height: 20 }}
@@ -41,26 +42,25 @@ class SendTest extends React.Component {
           >
             <View style={styles.gestureReciever}></View>
           </PanGestureHandler>
-          <Text style={{ marginTop: 10, fontWeight: "bold" }}>
-            {this.state.text}
-          </Text>
-          <Text style={{ marginTop: 5 }}>
+          <Text style={{ marginTop: 20 }}>
             gesture options: swipe up, down, right, or left
           </Text>
           <Text style={{ marginTop: 5 }}>
-            (quickly/slowly for each direction)
+            (swipe slowly or quickly for each direction)
           </Text>
           <TouchableOpacity
             style={{
               borderRadius: 5,
               backgroundColor: "blue",
-              marginTop: 30,
+              marginTop: 20,
               padding: 10,
             }}
             onPress={() => this.sendMessage()}
           >
             <Text style={{ fontSize: 18, color: "white" }}>Send Gesture</Text>
           </TouchableOpacity>
+          <Text style={{ marginTop: 20 }}>{this.state.text}</Text>
+          <Text>{this.state.attempts}</Text>
         </View>
       );
     } else {
@@ -93,7 +93,8 @@ class SendTest extends React.Component {
       if (trial < 4) {
         //console.log([correctEmoji, numAttempts+1]);
         this.setState({
-          text: "correct!",
+          text: "",
+          attempts: "",
           data: data.concat([
             { emoji: correctEmoji, attempts: numAttempts + 1 },
           ]),
@@ -102,6 +103,7 @@ class SendTest extends React.Component {
       } else {
         this.setState({
           trial: 0,
+          text: "",
         });
         console.log("SENDING TEST " + this.props.type + " RESULTS:");
         console.log(
@@ -115,8 +117,9 @@ class SendTest extends React.Component {
     } else {
       //say try again and repeat the instructions
       this.setState({
-        text: "incorrect. try again... (attempts: " + (numAttempts + 1) + ")",
         numAttempts: numAttempts + 1,
+        text: "incorrect. try again...",
+        attempts: "attempts: " + (numAttempts + 1),
       });
     }
   };
