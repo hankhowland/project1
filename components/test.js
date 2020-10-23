@@ -66,7 +66,7 @@ class Test extends React.Component {
   //prepares state for next trial, and sends vibration of emoji argument
   //unless max number of trials has been reached, then displays the results and exits to introscreen
   sendVibration = (emoji) => {
-    if (this.state.trials < 10) {
+    if (this.state.trials < 30) {
       this.setState({
         correctEmoji: emoji,
         numTries: 0,
