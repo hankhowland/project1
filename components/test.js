@@ -86,7 +86,8 @@ const styles = StyleSheet.create({
 	 },
     cont: {
         alignItems: 'center',
-        padding:20
+        padding:20,
+	    marginTop : 30
     },
     img: {
       height:50,

@@ -20,7 +20,8 @@ class Tutorial extends React.Component {
 const styles = StyleSheet.create({
     cont: {
         alignItems: 'center',
-        padding:20
+        padding:20,
+	marginTop: 30
     }
 });
 
