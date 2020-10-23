@@ -70,7 +70,6 @@ class Instructions extends React.Component {
             return <View></View>;
         }
     }
-  }
 }
 
 const styles = StyleSheet.create({
