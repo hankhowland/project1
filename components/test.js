@@ -81,6 +81,9 @@ class Test extends React.Component {
 
 
 const styles = StyleSheet.create({
+    div: { 
+	    marginTop: 10
+	 },
     cont: {
         alignItems: 'center',
         padding:20
